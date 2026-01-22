@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:16-alpine # Используем легкий и актуальный образ PostgreSQL
+    container_name: delivery_base
+
+    # Порт для доступа к базе данных
+    # 5432 — стандартный порт PostgreSQL
+    ports:
+      - "5432:5432"
+
+    environment:
+      POSTGRES_DB: j_delivery         # Имя базы данных, которая будет создана
+      POSTGRES_USER: jack           # Имя суперпользователя
+      POSTGRES_PASSWORD: 9376570167   # Пароль для суперпользователя
+
+    # Сохранение данных в томе (для постоянства)
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    # Политика перезапуска
+    restart: always
+
+# Объявление внешнего тома для сохранения данных
+volumes:
+  postgres_data:
