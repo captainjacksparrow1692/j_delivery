@@ -18,21 +18,21 @@ public class PriceSetting extends BaseEntity {
     Long id;
 
     @Column(name = "free_distance")
-    Integer freeDistance;
+    Double freeDistance;
 
     @Column(name = "base_fee")
-    Integer baseFee;
+    Double baseFee;
 
     @Column(name = "per_kg_rate")
-    Integer perKgRate;
+    Double perKgRate;
 
     @Column(name = "per_km_rate")
-    Integer perKmRate;
+    Double perKmRate;
 
     @Column(name = "urgent_fee")
-    Integer urgentFee;
+    Double urgentFee;
 
     @Column(name = "fragile_fee")
-    Integer fragileFee;
+    Double fragileFee;
 
 }
