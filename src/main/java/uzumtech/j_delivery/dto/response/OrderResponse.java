@@ -4,7 +4,7 @@ import uzumtech.j_delivery.constant.enums.Status;
 
 public record OrderResponse(
         Long id,
-        Integer tariffId,
+        Long tariffId,
         Double totalPrice,
         Status status
 ) {
