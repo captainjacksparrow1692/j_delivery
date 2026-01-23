@@ -13,7 +13,7 @@ public interface TariffService {
     TariffResponse getById(Long id);
 
     //Получить все доступные тарифы для отображения клиенту
-    Page<TariffResponse> getAllActive();
+    Page<TariffResponse> getAllActive(int page, int size);
 
     //Удалить тариф
     void delete(Long id);
