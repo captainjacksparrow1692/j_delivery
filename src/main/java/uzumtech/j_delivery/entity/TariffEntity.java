@@ -14,17 +14,17 @@ import lombok.experimental.FieldDefaults;
 public class TariffEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    Long id;
 
     @Column(name = "length", nullable = false)
-    Integer length;
+    Double length;
 
     @Column(name = "width", nullable = false)
-    Integer width;
+    Double width;
 
     @Column(name = "height", nullable = false)
-    Integer height;
+    Double height;
 
     @Column(name = "weight", nullable = false)
-    Integer weight;
+    Double weight;
 }
