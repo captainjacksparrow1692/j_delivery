@@ -20,9 +20,9 @@ public class OrderEntity {
     Long id;
 
     @Column(name = "merchant_id", nullable = false)
-    Integer merchantId;
+    Long merchantId;
     @Column(name = "tariff_id", nullable = false)
-    Integer tariffId;
+    Long tariffId;
 
     @Column(name = "length", nullable = false)
     Double length;
