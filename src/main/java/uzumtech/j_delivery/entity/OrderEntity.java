@@ -14,22 +14,29 @@ import uzumtech.j_delivery.constant.enums.Status;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class OrderEntity {
+public class OrderEntity extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @Column(name = "merchant_id", nullable = false)
     Long merchantId;
+
     @Column(name = "tariff_id", nullable = false)
     Long tariffId;
 
+    @Column(name = "tracking_number", unique = true)
+    String trackingNumber;
+
     @Column(name = "length", nullable = false)
     Double length;
+
     @Column(name = "width", nullable = false)
     Double width;
+
     @Column(name = "height", nullable = false)
     Double height;
+
     @Column(name = "weight", nullable = false)
     Double weight;
 
@@ -38,6 +45,7 @@ public class OrderEntity {
 
     @Column(name = "is_urgent")
     Boolean isUrgent;
+
     @Column(name = "is_fragile")
     Boolean isFragile;
 
