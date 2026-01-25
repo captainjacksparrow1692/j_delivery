@@ -35,7 +35,6 @@ public class OrderServiceImpl implements OrderService {
         PriceSettingResponse settings = priceSettingService.getCurrent();
         OrderEntity entity = orderMapper.toEntity(orderRequest);
 
-        // Теперь calculatePrice будет виден
         entity.setTotalPrice(calculatePrice(orderRequest, settings));
 
         return orderMapper.toResponse(orderRepository.save(entity));
@@ -58,7 +57,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional
-    public void delete(Long orderId) { // Исправлено имя параметра
+    public void delete(Long orderId) {
         orderRepository.deleteById(orderId);
     }
 
@@ -67,7 +66,6 @@ public class OrderServiceImpl implements OrderService {
         return orderRepository.findAll(pageable).map(orderMapper::toResponse);
     }
 
-    // Тот самый метод, который "не резолвился"
     private Double calculatePrice(OrderRequest req, PriceSettingResponse s) {
         return s.baseFee() + (req.weight() * s.perKgRate());
     }
