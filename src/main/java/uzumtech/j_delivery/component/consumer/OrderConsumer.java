@@ -1,4 +1,4 @@
-package uzumtech.j_delivery.component.producer;
+package uzumtech.j_delivery.component.consumer;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
