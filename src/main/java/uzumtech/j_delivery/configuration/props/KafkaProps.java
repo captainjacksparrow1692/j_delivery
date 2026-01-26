@@ -1,4 +1,4 @@
-package uzumtech.j_delivery.configuration.kafka;
+package uzumtech.j_delivery.configuration.props;
 
 import lombok.AccessLevel;
 import lombok.Data;
