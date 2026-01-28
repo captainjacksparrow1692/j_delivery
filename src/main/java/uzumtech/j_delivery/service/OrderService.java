@@ -1,18 +1,26 @@
 package uzumtech.j_delivery.service;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import uzumtech.j_delivery.dto.request.OrderRequest;
 import uzumtech.j_delivery.dto.response.OrderResponse;
 
-import java.sql.SQLDataException;
-
 public interface OrderService {
-    OrderResponse createOrder(OrderRequest orderRequest);
 
-    void delete(Long orderId);
+    // Создание нового заказа
+    OrderResponse create(OrderRequest orderRequest);
+
+    // Получение одного заказа
     OrderResponse get(Long orderId);
-    void update(Long orderId, OrderRequest orderRequest) throws SQLDataException;
 
-    Page<OrderResponse> findAll(Pageable pageable);
+    // Обновление (теперь возвращает Response)
+    OrderResponse update(Long orderId, OrderRequest orderRequest);
+
+    // Удаление
+    void delete(Long orderId);
+
+    // Пагинация (принимаем page и size напрямую для удобства контроллера)
+    Page<OrderResponse> getPagination(int page, int size);
+
+    // Метод для тестов GCP (если он нужен в реализации)
+    OrderResponse testGcp(Long orderId);
 }
