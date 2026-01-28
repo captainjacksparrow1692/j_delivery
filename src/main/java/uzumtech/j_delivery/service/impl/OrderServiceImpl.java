@@ -36,7 +36,6 @@ public class OrderServiceImpl implements OrderService {
         PriceSettingResponse settings = priceSettingService.getCurrent();
 
         if (settings == null) {
-            // Обращаемся напрямую: Класс.Константа
             throw new BussinesException(
                     Error.PRICE_SETTING_NOT_FOUND.getCode(),
                     Error.PRICE_SETTING_NOT_FOUND.getMessage(),
